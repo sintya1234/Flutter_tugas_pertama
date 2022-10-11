@@ -53,7 +53,7 @@ class _bookingState extends State<booking> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Booking page"),
+        title: Text("Booking Destinasi"),
         backgroundColor: Colors.purple,
       ),
       body: ListView(
@@ -154,7 +154,7 @@ class _bookingState extends State<booking> {
                         padding: new EdgeInsets.only(top: 20.0),
                       ),
                       ElevatedButton(
-                        child: Text('Simpan'),
+                        child: Text('kirim'),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.green,
                         ),

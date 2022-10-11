@@ -18,7 +18,7 @@ class _homeState extends State<home> {
     return MaterialApp(
      
       home: Scaffold(
-        appBar: AppBar(title: Text("Sintya's project"),  backgroundColor: Colors.purple),
+        appBar: AppBar(title: Text("Destinasi"),  backgroundColor: Colors.purple),
         body: Stack(
           children: [
             Container(
@@ -65,7 +65,7 @@ class _homeState extends State<home> {
                     )),
                 Container(
                   padding: EdgeInsets.all(15),
-                  child: Text('Pasti bisa',
+                  child: Text('Taman Ungu',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 30,
@@ -114,7 +114,7 @@ class _homeState extends State<home> {
                   },
                 
                   icon: Icon(Icons.add),
-                  label: Text('Tambah'),  
+                  label: Text('booking'),  
                 )
                 //  margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
               ],

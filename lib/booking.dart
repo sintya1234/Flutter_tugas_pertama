@@ -10,12 +10,7 @@ class booking extends StatefulWidget {
 }
 
 class _bookingState extends State<booking> {
-  // String _jk = "";
-  // void _pilihjk(String value) {
-  //   setState(() {
-  //     _jk = value;
-  //   });
-  // }
+ 
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -40,7 +35,7 @@ class _bookingState extends State<booking> {
                 ElevatedButton(
                   child: Text('simpan'),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.green,
+                    primary: Colors.purple,
                   ),
                   onPressed: () => Navigator.pop(context),
                 ),
@@ -52,6 +47,7 @@ class _bookingState extends State<booking> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
         title: Text("Booking page"),
@@ -61,7 +57,9 @@ class _bookingState extends State<booking> {
         children: [
           Container(
               padding: EdgeInsets.all(20.0),
-              child: new Column(
+              child: Form(
+                key: _formKey,
+                child: new Column(
                 children: <Widget>[
                   new TextFormField(
                       controller: controllerNama,
@@ -91,7 +89,7 @@ class _bookingState extends State<booking> {
                               borderRadius: new BorderRadius.circular(20.0))),
                       validator: (value) {
                         if (value!.isEmpty ||
-                            !RegExp(r'^[\w-\.]+@([\w-]+\.)+\w]{2,4}')
+                            !RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                                 .hasMatch(value)) {
                           return " Enter correct email";
                         } else {
@@ -134,16 +132,7 @@ class _bookingState extends State<booking> {
                     padding: new EdgeInsets.only(top: 20.0),
                   ),
 
-                  // new TextField(
-                  //     obscureText: true,
-                  //     decoration: new InputDecoration(
-                  //         hintText: "Password",
-                  //         labelText: "Password",
-                  //         border: new OutlineInputBorder(
-                  //             borderRadius: new BorderRadius.circular(20.0)))),
-                  // new Padding(
-                  //   padding: new EdgeInsets.only(top: 20.0),
-                  // ),
+               
                   new TextFormField(
                       controller: controllerDeskripsi,
                       maxLines: 3,
@@ -163,65 +152,13 @@ class _bookingState extends State<booking> {
                     ),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        kirimdata();
+                       kirimdata();
                       }
                     },
                   ),
-                  // new RadioListTile(
-                  //   value: "Laki-laki",
-                  //   title: new Text("Laki-laki"),
-                  //   groupValue: _jk,
-                  //   onChanged: (String value) {
-                  //     _pilihjk(value);
-                  //   },
-                  // ),
                 ],
               )
-
-              // padding: EdgeInsets.all(20.0),
-              // child: Form(
-              //     key: _formKey,
-              //     child: Column(
-              //       mainAxisAlignment: MainAxisAlignment.center,
-              //       children: <Widget>[
-              //         TextFormField(
-              //             validator: (value) =>
-              //                 ('value'.length < 2) ? 'test' : null),
-              //         TextFormField(
-              //           controller: username,
-              //           validator: (value) => (username.text.isEmpty)
-              //               ? 'Ga boleh kosong yaaa'
-              //               : null,
-              //         ),
-              //         TextFormField(
-              //           controller: username,
-              //           validator: (value) => (username.text.isEmpty)
-              //               ? 'Ga boleh kosong yaaa'
-              //               : null,
-              //         ),
-              //         // TextFormField(
-              //           // validator: (value) {
-              //           //   Pattern pattern = r'(^(?:[+0]6)?[0-9]{10,12}$';
-              //           //   RegExp regExp = new RegExp(pattern);
-              //           //   return (!regExp.hasMatch(value));
-              //           // }
-              //         // ),
-
-              //               FloatingActionButton.extended(
-              //       backgroundColor: const Color(0xff03dac6),
-              //       foregroundColor: Colors.black,
-              //       onPressed: () {
-              //         if(_formKey.currentState.validate()){
-
-              //         }
-              //       },
-              //       icon: Icon(Icons.add),
-              //       label: Text('EXTENDED'),
-              //     )
-
-              //         ),
-              //       ],
-              //     )
+              )
               ),
         ],
       ),

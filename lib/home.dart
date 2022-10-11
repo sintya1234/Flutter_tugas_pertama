@@ -14,7 +14,7 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+     
       home: Scaffold(
         appBar: AppBar(title: Text("Sintya's project")),
         body: Stack(

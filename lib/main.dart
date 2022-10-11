@@ -21,19 +21,13 @@ class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: booking()
-
-      // initialRoute: '/',
-      // routes: {
-      //   '/': (context) => Login(),
-      //   Pagedua.routeName: (context) => Pagedua(),
-        
-      // },
-      // routes: <String, WidgetBuilder>{
-      //   '/': (BuildContext context) => new home(),
-      //   '/booking': (BuildContext context) => new booking(),
-      // },
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Routing Navigation',
+        initialRoute: '/',
+        routes: {
+          '/': (context) => home(),
+          booking.routeName: (context) => booking(),
+        }
+        );
   }
 }

@@ -3,6 +3,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:like_button/like_button.dart';
 
+import 'booking.dart';
+
 class home extends StatefulWidget {
   const home({super.key});
 
@@ -16,7 +18,7 @@ class _homeState extends State<home> {
     return MaterialApp(
      
       home: Scaffold(
-        appBar: AppBar(title: Text("Sintya's project")),
+        appBar: AppBar(title: Text("Sintya's project"),  backgroundColor: Colors.purple),
         body: Stack(
           children: [
             Container(
@@ -94,14 +96,25 @@ class _homeState extends State<home> {
                     ],
                   ),
                 )),
+
+                Align(
+              alignment: AlignmentDirectional.topEnd,
+              child: LikeButton(),
+            ),
+
                 FloatingActionButton.extended(
                   backgroundColor: const Color(0xff03dac6),
                   foregroundColor: Colors.black,
                   onPressed: () {
-                    // Respond to button press
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return booking();
+                    }
+                     ) );
+            
                   },
+                
                   icon: Icon(Icons.add),
-                  label: Text('EXTENDED'),
+                  label: Text('Tambah'),  
                 )
                 //  margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
               ],
@@ -109,10 +122,7 @@ class _homeState extends State<home> {
 // Container(
 //  alignment: Alignment.topRight,
 // ),
-            Align(
-              alignment: AlignmentDirectional.topEnd,
-              child: LikeButton(),
-            ),
+            
           ],
         ),
       ),
